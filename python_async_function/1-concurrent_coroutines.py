@@ -12,7 +12,6 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
 
     async def collect(delay: float) -> None:
         result = await wait_random(delay)
-        # Insert in sorted order as each coroutine completes
         for i, d in enumerate(delays):
             if result < d:
                 delays.insert(i, result)
